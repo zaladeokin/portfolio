@@ -12,14 +12,14 @@ function NavWidget() {
 
     const FIRSTNAME_WITH_INITIALS = process.env.REACT_APP_FIRSTNAME_WITH_INITIALS || "ZACCHAEUS A.S.";
     const socialLink = [
-      { icon: faXTwitter, link: process.env.REACT_APP_TWITTER || "#" },
-      { icon: faFacebook, link: process.env.REACT_APP_FACEBOOK || "#" },
-      { icon: faInstagram, link: process.env.REACT_APP_INSTAGRAM || "#" },
-      { icon: faLinkedin, link: process.env.REACT_APP_LINKEDIN || "#" },
-      { icon: faGithub, link: process.env.REACT_APP_GITHUB || "#" },
+      { icon: faXTwitter, link: process.env.REACT_APP_TWITTER || "#twitter" },
+      { icon: faFacebook, link: process.env.REACT_APP_FACEBOOK || "#facebook" },
+      { icon: faInstagram, link: process.env.REACT_APP_INSTAGRAM || "#instagram" },
+      { icon: faLinkedin, link: process.env.REACT_APP_LINKEDIN || "#linkedin" },
+      { icon: faGithub, link: process.env.REACT_APP_GITHUB || "#github" },
     ];
 
-    const socialWidget= socialLink.map(social=> <SocialIcon info={social} />);
+    const socialWidget= socialLink.map(social=> <SocialIcon info={social} key={social.link} />);
 
   const handleToggle = (e) => {
     e.preventDefault();

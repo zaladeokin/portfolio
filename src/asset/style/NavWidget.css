@@ -111,7 +111,8 @@ nav{
 }
 
 .active, .nav-item:hover{
-    color: #fff; 
+    color: #fff;
+    cursor: pointer; 
 }
 
 .active .nav-icon, .nav-item:hover .nav-icon{

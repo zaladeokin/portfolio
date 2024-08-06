@@ -1,0 +1,69 @@
+main{
+    padding: 0 !important;
+}
+.typewriter-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #040b14;
+    background-image: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.content-header{
+    font-weight: 700;
+}
+
+.content{
+    margin: 0;
+    padding: 0;
+    margin-left: 2%;
+    width: 60%;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.typewriter{
+    font-style: italic;
+}
+
+.typewriter::after{
+    content: '|';
+    margin: 0;
+    margin-left: 1%;
+    animation: blink 1s infinite;
+}
+
+
+@media screen and (min-width: 750px){
+    .content{
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .typewriter-panel{
+       background-size: cover;
+       align-items: flex-start; 
+    }
+
+    .content{
+        font-size: 4em;
+    }
+}
+
+
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
