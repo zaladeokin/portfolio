@@ -1,9 +1,10 @@
 import '../asset/style/MainDiv.css'
 
-function MainDiv({children}) {
+function MainDiv({children, contentDiv= true}) {
+
     return(
         <main>
-            {children}
+            {contentDiv ? (<div className="contentDiv">{children}</div>) : children}
         </main>
     );
 }

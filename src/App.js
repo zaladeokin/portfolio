@@ -1,11 +1,15 @@
+import { Route, Routes } from "react-router-dom";
 import { NavWidget } from "./component";
-import { Homepage } from "./pages";
+import { Homepage, Portfolio } from "./pages";
 
 function App() {
   return (
     <>
       <NavWidget />
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
     </>
   );
 }

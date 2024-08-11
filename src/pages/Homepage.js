@@ -11,9 +11,9 @@ function Homepage() {
         let intervalId;
         const element= node.current
         const textArray = [
-          "Frontend Developer.",
-          "Backend Developer.",
-          "Fullstack Developer.",
+          "Front-end Developer.",
+          "Back-end Developer.",
+          "Full-stack Developer.",
         ];
         const nextText= ()=>{
             if(textArrayIndex === textArray.length - 1) setTextArrayIndex(0);
@@ -37,9 +37,9 @@ function Homepage() {
 
     const FIRSTNAME_WITH_INITIALS = process.env.REACT_APP_FIRSTNAME_WITH_INITIALS || "ZACCHAEUS A.S.";
   return (
-    <MainDiv>
+    <MainDiv contentDiv={false}>
       <div className="typewriter-panel">
-        <div className="content content-header">{FIRSTNAME_WITH_INITIALS}</div>
+        <div className="content-header">{FIRSTNAME_WITH_INITIALS}</div>
         <div className="content">I'm a&nbsp;<span className="typewriter" ref={node}></span></div>
       </div>
     </MainDiv>

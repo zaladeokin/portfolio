@@ -1,0 +1,22 @@
+.technologies{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    margin: 1% 0;
+    font-style: oblique;
+    font-weight: 700;
+}
+
+.technologies span{
+    margin: 0;
+    margin-right: 1em;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.tech-icon{
+    color: #000;
+    margin: 0;
+    margin-right: 0.5em;
+}

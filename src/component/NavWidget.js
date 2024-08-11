@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars, faHouse, faAddressCard, faBriefcase, faServer, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faXTwitter, faFacebook, faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import profilePicture from "../asset/img/myProfilePicture.jpg";
+import profilePicture from "../asset/img/myProfilePicture.png";
 import "../asset/style/NavWidget.css";
+import { NavLink } from "react-router-dom";
 
 function NavWidget() {
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
 
     const FIRSTNAME_WITH_INITIALS = process.env.REACT_APP_FIRSTNAME_WITH_INITIALS || "ZACCHAEUS A.S.";
     const socialLink = [
@@ -31,28 +32,28 @@ function NavWidget() {
       <img src={profilePicture} alt="Profile" />
       <div className="name-panel">{FIRSTNAME_WITH_INITIALS}</div>
       <div className="socials-panel">{socialWidget}</div>
-      <nav>
+      <nav onClick={handleToggle}>
         {/*use <NavLink> kater*/}
-        <div className="nav-item active">
+        <NavLink to="/" className={({isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <FontAwesomeIcon icon={faHouse} className="nav-icon" />
           Home
-        </div>
-        <div className="nav-item">
+        </NavLink>
+        <NavLink to="/about" className={({isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <FontAwesomeIcon icon={faAddressCard} className="nav-icon" />
           About
-        </div>
-        <div className="nav-item">
+        </NavLink>
+        <NavLink to="/portfolio" className={({isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
           Portfolio
-        </div>
-        <div className="nav-item">
+        </NavLink>
+        <NavLink to="/services" className={({isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <FontAwesomeIcon icon={faServer} className="nav-icon" />
           Services
-        </div>
-        <div className="nav-item">
+        </NavLink>
+        <NavLink to="/contact" className={({isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           Contact
-        </div>
+        </NavLink>
       </nav>
 
       <div className="toggle-icon-container">
