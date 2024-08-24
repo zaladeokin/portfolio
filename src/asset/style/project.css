@@ -1,0 +1,32 @@
+.project h1, .project h1::after{
+    all: initial;
+}
+
+
+.project svg{
+    display: none;
+}
+
+.project h1, .project h2, .project h3, .project h4{
+    display: block;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+    border-bottom: 1px solid black;
+    font-family: "Raleway", sans-serif;
+}
+
+.project h1{
+    border-bottom: unset;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.project h3{
+    width: fit-content;
+}
+
+.project pre{
+    background-color: #f6f8fa;
+    padding: 1em;
+    overflow-x: hidden;
+}

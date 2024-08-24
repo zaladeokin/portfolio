@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { NavWidget } from "./component";
-import { Homepage, Portfolio } from "./pages";
+import { Homepage, Portfolio, Project } from "./pages";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:repo_name" element={<Project />} />
       </Routes>
     </>
   );

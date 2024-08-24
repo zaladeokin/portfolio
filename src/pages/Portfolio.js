@@ -9,7 +9,7 @@ import "../asset/style/Portfolio.css";
 
 function Portfolio() {
   const [pageNum, setPageNum] = useState(1);
-  const { result, pagination, loading } = useGithubAPI("list", pageNum);
+  const { result, pagination, loading } = useGithubAPI("list", null, pageNum);
   const [pageQuery, setPageQuery]= useSearchParams();
 
   useEffect(()=>{

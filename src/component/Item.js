@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../asset/style/Item.css";
 import Tool from "./Tool";
 
@@ -6,7 +7,7 @@ function Item({data}) {
     let created_date = new Date(data.created_at);
     let updated_date = new Date(data.updated_at);
   return (
-    <div className="item-card">
+    <Link to={`/portfolio/${data.name}`} className="item-card">
       <h2 className="item-heading">{data.name}</h2>
       <p>{data.description}</p>
       <Tool tools={data.topics} />
@@ -14,7 +15,7 @@ function Item({data}) {
         <span>Created at {months[created_date.getMonth()] +"  "+ created_date.getDate()+ ", "+ created_date.getFullYear()}</span>
         <span>Updated at {months[updated_date.getMonth()] +"  "+ updated_date.getDate()+ ", "+ updated_date.getFullYear()}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
