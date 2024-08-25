@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -47,13 +47,15 @@ function Project() {
     return (
       <MainDiv>
         <h1>
-          Portfolio&nbsp;
+          <Link to="/portfolio">Portfolio</Link>&nbsp;
           <FontAwesomeIcon icon={faArrowRight} />
           &nbsp;{`${repo_name}`}
         </h1>
-        { loading ? (
+        {loading ? (
           <img src={loadingImg} alt="Loading..." className="loadingGif" />
-        ) : content }
+        ) : (
+          content
+        )}
       </MainDiv>
     );
 }
