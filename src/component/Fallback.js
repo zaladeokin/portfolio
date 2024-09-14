@@ -10,7 +10,7 @@ function Fallback() {
             <h1>An error occurrred</h1>
             <p>Something went wrong</p>
             <Link to="/">
-                <button onClick={resetBoundary}>Back To Home</button>
+                <button onClick={resetBoundary} className="button">Back To Home</button>
             </Link>
         </MainDiv>
     );

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-function useSearchGithub(keyword, isSearch) {
+function useSearchGithub(keyword, isSearch, filter) {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState(undefined);
+  
 
   useEffect(() => {
     if (!isSearch) return; // Prevent hook for making request, given chance to useGithubAPI() hook
@@ -15,7 +16,10 @@ function useSearchGithub(keyword, isSearch) {
       try {
         if(process.env.REACT_APP_GH_USERNAME === undefined || process.env.REACT_APP_GH_USERNAME === "") throw new Error("Invalid username");
 
-        url= "https://api.github.com/search/repositories?q=" + encodeURIComponent(keyword + " in:name,description,readme user:" +process.env.REACT_APP_GH_USERNAME);
+        //Create filter qualifier
+        let filterKey= filter ? ",description,readme,topics" : "";
+
+        url= "https://api.github.com/search/repositories?q=" + encodeURIComponent(keyword + " in:name"+filterKey+" user:" +process.env.REACT_APP_GH_USERNAME);
         res = await fetch(url);
         //set request status
         res_obj.status = res.status;
@@ -41,7 +45,7 @@ function useSearchGithub(keyword, isSearch) {
       }
       setLoading(false);
     })();
-  }, [keyword, isSearch]);
+  }, [keyword, isSearch, filter]);
   
   return JSON.stringify({ ...result, loading });
 }

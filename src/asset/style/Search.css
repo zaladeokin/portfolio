@@ -24,6 +24,22 @@
     color: #fff;
 }
 
+.filter{
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0.5vmin 0;
+}
+
+.filter input{
+  margin-left: 1em;
+  width: fit-content;
+}
+
+.filter span{
+  padding-left: 1em;
+}
+
 @media screen and (min-width: 1200px) {
   .search{
     min-width: 50%;
