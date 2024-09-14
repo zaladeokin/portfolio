@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
-function useGithubAPI(request_type, repo_name= null, page= 1, limit=2) {
+function useGithubAPI(request_type, repo_name= null, isSearch= false, page= 1, limit=2) {
     const [loading, setLoading] = useState(true);
     const [result, setResult]= useState(undefined);
     
   useEffect(()=>{
+    if(isSearch) return;// Prevent hook for making request, given chance to useSearchGithub() hook
     let url, res; let res_obj={};
+    
     (async ()=>{
         try {
-            if (process.env.REACT_APP_GH_USERNAME === undefined || process.env.REACT_APP_GH_USERNAME === "")throw new Error("invalid username");
+            if (process.env.REACT_APP_GH_USERNAME === undefined || process.env.REACT_APP_GH_USERNAME === "") throw new Error("invalid username");
 
             //Compose path for different Github endpoint
             if (request_type === "list") {
@@ -60,9 +62,9 @@ function useGithubAPI(request_type, repo_name= null, page= 1, limit=2) {
             setResult(undefined);
         }
     })();
-  }, [request_type, repo_name, page, limit]);
+  }, [request_type, repo_name, page, limit, isSearch]);
   
-  return {...result, loading};
+  return JSON.stringify({...result, loading});
 }
 
 export default useGithubAPI;

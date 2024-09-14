@@ -1,0 +1,32 @@
+.search{
+    min-width: 80%;
+    max-width: 95%;
+    padding: 0;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input{
+    width: 70%;
+    margin: 1vmin 0;
+    height: 3em;
+    padding: 1%;
+    border-radius: 1em;
+    outline-color: #149cdb;
+    font-size: 1em;
+}
+
+.search input:focus{
+    background-color: black;
+    color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .search{
+    min-width: 50%;
+    max-width: 80%;
+  }
+}

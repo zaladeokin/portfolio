@@ -11,14 +11,33 @@ import { useGithubAPI } from "../hooks/index";
 import loadingImg from "../asset/img/loading.gif";
 
 import  "../asset/style/project.css"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Project() {
     const {repo_name}= useParams();
     const hash= useLocation().hash;
-    const node= useRef(null)
-    const { result, loading, status } = useGithubAPI("single", repo_name);
-    let content;
+    const node= useRef(null);
+    const resString= useGithubAPI("single", repo_name);
+    const [res, setRes]= useState(undefined);
+    let content, result, loading, status;
+
+    //Update result
+    useEffect(()=>{
+      if(resString === undefined) return;
+      let resObj = JSON.parse(resString);
+      setRes(resObj);
+    },[resString])
+
+    if(res !== undefined){
+      result = res.result !== undefined ? res.result : undefined;
+      loading= res.loading !== undefined ? res.loading : true;
+      status = res.status !== undefined ? res.status : 500;
+    }else{
+      result= undefined;
+      loading= true;
+      status= 500
+    }
+
     
     //scroll into view effect.
     useEffect(()=>{

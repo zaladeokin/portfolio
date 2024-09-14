@@ -30,3 +30,22 @@
     padding: 1em;
     overflow-x: hidden;
 }
+
+.button{
+    margin: 0;
+    padding: 1%;
+    height: 3em;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.button:active{
+    color: #149cdb;
+}
+
+.button:hover{
+    background-color: black;
+    color: #fff;
+}
