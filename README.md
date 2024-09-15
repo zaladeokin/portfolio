@@ -96,4 +96,9 @@ To run this project locally, follow the steps below:
 
    ```
 
-6. Open the app in your browser at (http://localhost:3000)[http://localhost:3000].
+6. Open the app in your browser at [http://localhost:3000](http://localhost:3000).
+
+## Contact
+
+Email: [zaladeokin@gmail.com](https://mailto:zaladeokin@gmail.com)  
+Phone: (+234)8135994222
